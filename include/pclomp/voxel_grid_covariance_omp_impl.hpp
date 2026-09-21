@@ -39,7 +39,13 @@
 #define PCL_VOXEL_GRID_COVARIANCE_IMPL_OMP_H_
 
 #include <pcl/common/common.h>
+#if __has_include(<pcl/filters/boost.h>)
 #include <pcl/filters/boost.h>
+#else
+#include <boost/mpl/size.hpp>
+#include <boost/random.hpp>
+#include <boost/random/normal_distribution.hpp>
+#endif
 #include "voxel_grid_covariance_omp.h"
 #include <Eigen/Dense>
 #include <Eigen/Cholesky>

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10...3.30)
 project(ndt_omp_ros2)
 
 if(NOT CMAKE_CXX_STANDARD)
@@ -35,9 +35,7 @@ add_executable(align
 )
 target_link_libraries(align
   ndt_omp
-)
-ament_target_dependencies(align
-  rclcpp
+  rclcpp::rclcpp
 )
 
 #############
